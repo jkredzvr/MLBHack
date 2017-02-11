@@ -4,6 +4,11 @@ using System.Linq;
 using System.Collections;
 using System.Collections.Generic;
 
+/// <summary>
+/// Class that allows creation of audio object from clips located in Resources/Audio
+/// 1.  pass in string of clip name
+/// 2.  audio object can be played/paused, finished/destroyed
+/// </summary>
 public class Sound
 {
     public AudioManager audioManager;
@@ -17,6 +22,7 @@ public class Sound
     private HashSet<Sound> interruptedSounds =
         new HashSet<Sound> ();
 
+    #region Sound Class Properties
     /// returns a float from 0.0 to 1.0 representing how much
     /// of the sound has been played so far
     public float progress {
@@ -50,7 +56,9 @@ public class Sound
             PlayOrPause(value, interrupts);
         }
     }
+    #endregion
 
+    #region Sound Class Constructor
     /// Try to avoid calling this directly
     /// Use AudioManager.NewSound instead
     public Sound(string newName) {
@@ -59,7 +67,9 @@ public class Sound
         if (clip == null)
             throw new Exception("Couldn't find AudioClip with name '"+name+"'. Are you sure the file is in a folder named 'Resources'?");
     }
+    #endregion
 
+    #region Sound Class Methods
     public void Update() {
         if (source != null)
             source.loop = loop;
@@ -97,4 +107,5 @@ public class Sound
     public void Reset() {
         source.time = 0f;
     }
+    #endregion
 }

@@ -8,12 +8,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System;
 
+
+/// <summary>
+/// This audio manager creates "Sound" class objects and calls update on them.  Exposes two methods to create Sound/audio objects...
+/// </summary>
 public class AudioManager : MonoBehaviour
 {
 
     public static AudioManager instance = null;
 
     void Awake() {
+        #region Singleton Setup
         //Check if instance already exists
         if (instance == null)
 
@@ -28,7 +33,8 @@ public class AudioManager : MonoBehaviour
 
         //Sets this to not be destroyed when reloading scene
         DontDestroyOnLoad(gameObject);
-     }
+        #endregion
+    }
 
 
     //public static AudioManager Main {
@@ -39,6 +45,7 @@ public class AudioManager : MonoBehaviour
 
     public HashSet<Sound> sounds = new HashSet<Sound> ();
 
+    #region Methods to Create Sound objects
     /// Creates a new sound, registers it, gives it the properties specified, and starts playing it
     public Sound PlayNewSound(string soundName, bool loop=false, bool interrupts=false, Action<Sound> callback=null, Vector3 pos = default(Vector3)) {
         Sound sound = NewSound(soundName, loop, interrupts, callback, pos);
@@ -55,6 +62,7 @@ public class AudioManager : MonoBehaviour
         sound.callback = callback;
         return sound;
     }
+    #endregion
 
     /// Registers a sound with the AudioManager and gives it an AudioSource if necessary
     /// You should probably avoid calling this function directly and just use 
@@ -94,6 +102,9 @@ public class AudioManager : MonoBehaviour
         
     }
     
+    /// <summary>
+    /// Call update on each sound object, which determines if audio object should loop or stop playing.
+    /// </summary>
     private void Update() {
         sounds.ToList().ForEach(sound => {
             sound.Update();                 
