@@ -18,7 +18,7 @@ public class CameraManager : MonoBehaviour
         {
             cameraDictionary.Add(camera.name, camera);
         }
-        ActiveCamera = cameraDictionary["Main Camera"];
+        ActiveCamera = cameraDictionary["Camera (head)"];
     }
 
     // Update is called once per frame
