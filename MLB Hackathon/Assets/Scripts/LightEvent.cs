@@ -1,15 +1,17 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class LightEvent : MonoBehaviour {
+public class LightEvent : GameEvent
+{
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+    public string LightName;
+    public bool State;
+
+    public LightEvent(float startEventTime, string lightName, bool state)
+    {
+        LightName = lightName;
+        eventTime = startEventTime;
+        State = state;
+    }
 }
+
