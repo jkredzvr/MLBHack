@@ -5,9 +5,9 @@ public class FakeSoundEventListener : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        EventManager.Instance.QueueEvent(new AudioEvent(1, "yea"));
-        EventManager.Instance.QueueEvent(new AudioEvent(5, "hi asfddsaf"));
-        EventManager.Instance.QueueEvent(new AudioEvent(10,"heyo"));
+        //EventManager.Instance.QueueEvent(new AudioEvent(1, "yea"));
+        //EventManager.Instance.QueueEvent(new AudioEvent(5, "hi asfddsaf"));
+        //EventManager.Instance.QueueEvent(new AudioEvent(10,"heyo"));
         
 	}
 	
