@@ -26,6 +26,7 @@ public class FakeSoundEventListener : MonoBehaviour {
 
     void OnAudioEvent(AudioEvent e)
     {
+        AudioManager.instance.PlayNewSound(e.Name, false, false, null, e.Location);
         Debug.Log("<color=red>Audio Event happened</color>" + e.Name);
     }
 }

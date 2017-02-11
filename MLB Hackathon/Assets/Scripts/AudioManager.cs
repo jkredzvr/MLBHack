@@ -50,6 +50,7 @@ public class AudioManager : MonoBehaviour
     public Sound PlayNewSound(string soundName, bool loop=false, bool interrupts=false, Action<Sound> callback=null, Vector3 pos = default(Vector3)) {
         Sound sound = NewSound(soundName, loop, interrupts, callback, pos);
         sound.playing = true;
+        Debug.Log("Got here");
         return sound;
     }
 
