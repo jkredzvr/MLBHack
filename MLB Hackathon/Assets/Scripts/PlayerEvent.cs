@@ -12,8 +12,17 @@ public class PlayerEvent : GameEvent
     public PlayerEvent(float startEventTime, string playerName, string animationState, Vector3 startPos, Vector3 endPos)
     {
         eventTime = startEventTime;
+        PlayerName = playerName;
         AnimationState = animationState;
         StartPos = startPos;
         EndPos = endPos;
     }
+
+    public PlayerEvent(float startEventTime, string playerName, string animationState)
+    {
+        eventTime = startEventTime;
+        PlayerName = playerName;
+        AnimationState = animationState;
+    }
+
 }
