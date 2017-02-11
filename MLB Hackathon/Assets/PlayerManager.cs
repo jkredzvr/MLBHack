@@ -37,8 +37,16 @@ public class PlayerManager : MonoBehaviour {
         GameObject player = playerDictionary[e.PlayerName];
         Debug.Log("<color=red>Event Time:</color>" + e.eventTime);
         Debug.Log("<color=red>Animation:</color>" + e.AnimationState);
-        player.GetComponent<PlayerBehaviour>().Move(e.StartPos, e.EndPos);
 
+        //Just animation event
+        if(e.StartPos == Vector3.zero && e.EndPos == Vector3.zero)
+        {
+            Debug.Log(e.AnimationState);
+        }
+        else
+        {
+            player.GetComponent<PlayerBehaviour>().SetMove(e.StartPos, e.EndPos);
+        }
         //Debug.Log("<color=red>Audio Event happened</color>" + e.Name);
     }
 
