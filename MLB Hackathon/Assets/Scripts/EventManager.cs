@@ -161,7 +161,7 @@ public class EventManager : MonoBehaviour
     {
         //Keep incrementing to current time
         curTime += Time.deltaTime;
-        Debug.Log("Current time: " + curTime.ToString());
+        //Debug.Log("Current time: " + curTime.ToString());
 
 
         float timer = 0.0f;
