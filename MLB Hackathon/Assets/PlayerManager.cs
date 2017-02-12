@@ -39,15 +39,45 @@ public class PlayerManager : MonoBehaviour {
         Debug.Log("<color=red>Animation:</color>" + e.AnimationState);
 
         //Just animation event
-        if(e.StartPos == Vector3.zero && e.EndPos == Vector3.zero)
+        if (e.StartPos == Vector3.zero && e.EndPos == Vector3.zero)
         {
+            if(e.yAngle != 0)
+            {
+                try
+                {
+                    player.GetComponent<ActorAnimationController>().changeAnimation(e.AnimationState);
+                    player.transform.localEulerAngles = new Vector3(player.transform.localEulerAngles.x, e.yAngle, player.transform.localEulerAngles.z);
+
+                }
+                catch
+                {
+                    Debug.Log("Couldnt find animation" + e.AnimationState);
+                }
+            }
+
             Debug.Log(e.AnimationState);
+            try
+            {
+                player.GetComponent<ActorAnimationController>().changeAnimation(e.AnimationState);
+            }
+            catch
+            {
+                Debug.Log("Couldnt find animation" + e.AnimationState);
+            }
         }
         else
         {
             player.GetComponent<PlayerBehaviour>().SetMove(e.StartPos, e.EndPos);
+            Debug.Log(e.AnimationState);
+            try
+            {
+                player.GetComponent<ActorAnimationController>().changeAnimation(e.AnimationState);
+            }
+            catch
+            {
+                Debug.Log("Couldnt find animation" + e.AnimationState);
+            }
         }
-        //Debug.Log("<color=red>Audio Event happened</color>" + e.Name);
     }
 
     public GameObject FindPlayerGameObject(string playerName)
