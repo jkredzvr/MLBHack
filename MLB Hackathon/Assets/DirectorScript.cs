@@ -5,48 +5,82 @@ public class DirectorScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-
         #region Actual Script
         //Play Sound
+        //EventManager.Instance.QueueEvent(new CameraEvent(0, "PlayerCamera"));
         EventManager.Instance.QueueEvent(new AudioEvent(0, "MrNovember-Commentary", new Vector3(0, 0, 0)));
+        EventManager.Instance.QueueEvent(new AudioEvent(0, "beforeHRAudienceCheer", new Vector3(0, 0, 0)));
+        
 
-        //Play Lifting Up Bat Animation
-        EventManager.Instance.QueueEvent(new PlayerEvent(20, "Batter", "Lift Bat"));
+        ///Player
+        EventManager.Instance.QueueEvent(new PlayerEvent(2, "Jeter", "BatIdle"));
 
-        EventManager.Instance.QueueEvent(new CameraEvent(21, "PlayerCamera"));
+
+        //Play Sound
+        EventManager.Instance.QueueEvent(new AudioEvent(3, "BooSFX", new Vector3(0, 0, 0)));
+        //Play Sound
+        EventManager.Instance.QueueEvent(new AudioEvent(5, "GoYankeesSFX", new Vector3(0, 0, 0)));
+        //Play Sound
+        EventManager.Instance.QueueEvent(new AudioEvent(6, "Boo2SFX", new Vector3(0, 0, 0)));
+        //Play Sound
+        EventManager.Instance.QueueEvent(new AudioEvent(8, "GoYankees2SFX", new Vector3(0, 0, 0)));
+        //Play Sound
+        EventManager.Instance.QueueEvent(new AudioEvent(9, "TrashTalkSFX", new Vector3(0, 0, 0)));
+
+        EventManager.Instance.QueueEvent(new AudioEvent(10, "GoYankeesSFX2", new Vector3(0, 0, 0)));
+
 
         //Pitcher Throw Animation
         EventManager.Instance.QueueEvent(new PlayerEvent(22, "Pitcher", "Throw"));
-
-       
 
 
         //Pitcher Throw Animation
         EventManager.Instance.QueueEvent(new PlayerEvent(23, "Baseball", "Spin", new Vector3(27/2f,0,27/2f), new Vector3(0,0,0)));
 
         ////Hitting The Ball
-        EventManager.Instance.QueueEvent(new PlayerEvent(25, "Batter", "Swing"));
+        EventManager.Instance.QueueEvent(new PlayerEvent(25, "Jeter", "Swing"));
         
         ////Hit Sound
         EventManager.Instance.QueueEvent(new AudioEvent(25, "BatSFX", new Vector3(0, 0, 0)));
 
         ////Run to first base
-        EventManager.Instance.QueueEvent(new PlayerEvent(26, "Batter", "Run", new Vector3(0, 0, 0), new Vector3(27, 0, 0)));
-
+        EventManager.Instance.QueueEvent(new PlayerEvent(30, "Jeter", "Run"));
+        
         ////Run from first to second base
-        EventManager.Instance.QueueEvent(new PlayerEvent(35, "Batter", "Run", new Vector3(27, 0, 0), new Vector3(27, 0, 27)));
-
-        ////Player lifts up arm (celebratory) while running
-        EventManager.Instance.QueueEvent(new PlayerEvent(32, "Batter", "Lift Arm"));
+        EventManager.Instance.QueueEvent(new PlayerEvent(36, "Jeter", "Run", -370.844f));
+        //EventManager.Instance.QueueEvent(new PlayerEvent(40, "Jeter", "Run", new Vector3(27, 0, 0), new Vector3(27, 0, 27)));
 
         ////Run from 2nd to 3rd base
-        EventManager.Instance.QueueEvent(new PlayerEvent(40, "Batter", "Run", new Vector3(27, 0, 27), new Vector3(0, 0, 27)));
+        EventManager.Instance.QueueEvent(new PlayerEvent(42, "Jeter", "Run", -430.844f));
+        
+        //EventManager.Instance.QueueEvent(new PlayerEvent(50, "Jeter", "Run", new Vector3(27, 0, 27), new Vector3(0, 0, 27)));
 
         ////Run from 3rd to home base
-        EventManager.Instance.QueueEvent(new PlayerEvent(45, "Batter", "Run", new Vector3(0, 0, 27), new Vector3(0, 0, 0)));
+        EventManager.Instance.QueueEvent(new PlayerEvent(47, "Jeter", "Run", -530.844f));
+        //EventManager.Instance.QueueEvent(new PlayerEvent(60, "Jeter", "Run", new Vector3(0, 0, 27), new Vector3(0, 0, 0)));
+
+        EventManager.Instance.QueueEvent(new PlayerEvent(47, "TeamMate1", "Run"));
+        EventManager.Instance.QueueEvent(new PlayerEvent(47, "TeamMate2", "Run"));
+        EventManager.Instance.QueueEvent(new PlayerEvent(47, "TeamMate3", "Run"));
+        EventManager.Instance.QueueEvent(new PlayerEvent(47, "TeamMate4", "Run"));
+        EventManager.Instance.QueueEvent(new PlayerEvent(47, "TeamMate5", "Run"));
+        EventManager.Instance.QueueEvent(new PlayerEvent(47, "TeamMate6", "Run"));
+        EventManager.Instance.QueueEvent(new PlayerEvent(47, "TeamMate7", "Run"));
+        EventManager.Instance.QueueEvent(new PlayerEvent(47, "TeamMate8", "Run"));
+        EventManager.Instance.QueueEvent(new PlayerEvent(47, "TeamMate9", "Run"));
 
         ////Celebrate with team
-        EventManager.Instance.QueueEvent(new PlayerEvent(50, "Batter", "Celebrate"));
+        EventManager.Instance.QueueEvent(new PlayerEvent(51, "TeamMate1", "Victory"));
+        EventManager.Instance.QueueEvent(new PlayerEvent(51, "TeamMate2", "JumpVictory"));
+        EventManager.Instance.QueueEvent(new PlayerEvent(51, "TeamMate3", "Victory"));
+        EventManager.Instance.QueueEvent(new PlayerEvent(51, "TeamMate4", "JumpVictory"));
+        EventManager.Instance.QueueEvent(new PlayerEvent(51, "TeamMate5", "JumpVictory"));
+        EventManager.Instance.QueueEvent(new PlayerEvent(51, "TeamMate6", "Victory"));
+        EventManager.Instance.QueueEvent(new PlayerEvent(51, "TeamMate9", "Victory"));
+        EventManager.Instance.QueueEvent(new PlayerEvent(51, "TeamMate7", "JumpVictory"));
+        EventManager.Instance.QueueEvent(new PlayerEvent(51, "TeamMate8", "JumpVictory"));
+        EventManager.Instance.QueueEvent(new PlayerEvent(52, "Jeter", "Victory"));
+        EventManager.Instance.QueueEvent(new PlayerEvent(54, "Jeter", "Idle"));
 
 
         ////Ball flying to the crowd
