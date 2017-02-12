@@ -60,6 +60,9 @@ public class ActorAnimationController : MonoBehaviour {
             case "BatIdle":
                 myAnimator.SetTrigger("BatIdle");
                 break;
+            case "BallHit":
+                myAnimator.SetTrigger("BallHit");
+                break;
             default:
                 Debug.Log(a + "anim doesnt exist");
                 break;

@@ -27,7 +27,7 @@ public class DirectorScript : MonoBehaviour {
         //Play Sound
         EventManager.Instance.QueueEvent(new AudioEvent(9, "TrashTalkSFX", new Vector3(0, 0, 0)));
 
-        EventManager.Instance.QueueEvent(new AudioEvent(10, "GoYankeesSFX2", new Vector3(0, 0, 0)));
+        EventManager.Instance.QueueEvent(new AudioEvent(10, "GoYankees2SFX", new Vector3(0, 0, 0)));
 
 
         //Pitcher Throw Animation
@@ -35,26 +35,28 @@ public class DirectorScript : MonoBehaviour {
 
 
         //Pitcher Throw Animation
-        EventManager.Instance.QueueEvent(new PlayerEvent(23, "Baseball", "Spin", new Vector3(27/2f,0,27/2f), new Vector3(0,0,0)));
+        EventManager.Instance.QueueEvent(new PlayerEvent(25, "Baseball", "BallHit"));
 
         ////Hitting The Ball
         EventManager.Instance.QueueEvent(new PlayerEvent(25, "Jeter", "Swing"));
         
         ////Hit Sound
-        EventManager.Instance.QueueEvent(new AudioEvent(25, "BatSFX", new Vector3(0, 0, 0)));
+        //EventManager.Instance.QueueEvent(new AudioEvent(25, "BatSFX", new Vector3(0, 0, 0)));
+        EventManager.Instance.QueueEvent(new AudioEvent(26, "woodbat", new Vector3(0, 0, 0)));
 
         ////Run to first base
         EventManager.Instance.QueueEvent(new PlayerEvent(30, "Jeter", "Run"));
-        
+        EventManager.Instance.QueueEvent(new AudioEvent(30, "beforeHRAudienceCheer", new Vector3(0, 0, 0)));
+
         ////Run from first to second base
         EventManager.Instance.QueueEvent(new PlayerEvent(36, "Jeter", "Run", -370.844f));
         //EventManager.Instance.QueueEvent(new PlayerEvent(40, "Jeter", "Run", new Vector3(27, 0, 0), new Vector3(27, 0, 27)));
 
         ////Run from 2nd to 3rd base
         EventManager.Instance.QueueEvent(new PlayerEvent(42, "Jeter", "Run", -430.844f));
-        
-        //EventManager.Instance.QueueEvent(new PlayerEvent(50, "Jeter", "Run", new Vector3(27, 0, 27), new Vector3(0, 0, 27)));
 
+        //EventManager.Instance.QueueEvent(new PlayerEvent(50, "Jeter", "Run", new Vector3(27, 0, 27), new Vector3(0, 0, 27)));
+        EventManager.Instance.QueueEvent(new AudioEvent(25, "JeterDefinMoment", new Vector3(0, 0, 0)));
         ////Run from 3rd to home base
         EventManager.Instance.QueueEvent(new PlayerEvent(47, "Jeter", "Run", -530.844f));
         //EventManager.Instance.QueueEvent(new PlayerEvent(60, "Jeter", "Run", new Vector3(0, 0, 27), new Vector3(0, 0, 0)));
@@ -79,7 +81,7 @@ public class DirectorScript : MonoBehaviour {
         EventManager.Instance.QueueEvent(new PlayerEvent(51, "TeamMate9", "Victory"));
         EventManager.Instance.QueueEvent(new PlayerEvent(51, "TeamMate7", "JumpVictory"));
         EventManager.Instance.QueueEvent(new PlayerEvent(51, "TeamMate8", "JumpVictory"));
-        EventManager.Instance.QueueEvent(new PlayerEvent(52, "Jeter", "Victory"));
+        EventManager.Instance.QueueEvent(new PlayerEvent(51, "Jeter", "Victory"));
         EventManager.Instance.QueueEvent(new PlayerEvent(54, "Jeter", "Idle"));
 
 
