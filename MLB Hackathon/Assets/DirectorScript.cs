@@ -31,7 +31,7 @@ public class DirectorScript : MonoBehaviour {
 
 
         //Pitcher Throw Animation
-        EventManager.Instance.QueueEvent(new PlayerEvent(22, "Pitcher", "Throw"));
+        EventManager.Instance.QueueEvent(new PlayerEvent(23, "Pitcher", "Pitch"));
 
 
         //Pitcher Throw Animation
@@ -52,11 +52,12 @@ public class DirectorScript : MonoBehaviour {
         EventManager.Instance.QueueEvent(new PlayerEvent(36, "Jeter", "Run", -370.844f));
         //EventManager.Instance.QueueEvent(new PlayerEvent(40, "Jeter", "Run", new Vector3(27, 0, 0), new Vector3(27, 0, 27)));
 
+        EventManager.Instance.QueueEvent(new AudioEvent(39, "JeterDefinMoment", new Vector3(0, 0, 0)));
         ////Run from 2nd to 3rd base
         EventManager.Instance.QueueEvent(new PlayerEvent(42, "Jeter", "Run", -430.844f));
 
         //EventManager.Instance.QueueEvent(new PlayerEvent(50, "Jeter", "Run", new Vector3(27, 0, 27), new Vector3(0, 0, 27)));
-        EventManager.Instance.QueueEvent(new AudioEvent(25, "JeterDefinMoment", new Vector3(0, 0, 0)));
+        
         ////Run from 3rd to home base
         EventManager.Instance.QueueEvent(new PlayerEvent(47, "Jeter", "Run", -530.844f));
         //EventManager.Instance.QueueEvent(new PlayerEvent(60, "Jeter", "Run", new Vector3(0, 0, 27), new Vector3(0, 0, 0)));
@@ -81,8 +82,8 @@ public class DirectorScript : MonoBehaviour {
         EventManager.Instance.QueueEvent(new PlayerEvent(51, "TeamMate9", "Victory"));
         EventManager.Instance.QueueEvent(new PlayerEvent(51, "TeamMate7", "JumpVictory"));
         EventManager.Instance.QueueEvent(new PlayerEvent(51, "TeamMate8", "JumpVictory"));
-        EventManager.Instance.QueueEvent(new PlayerEvent(51, "Jeter", "Victory"));
-        EventManager.Instance.QueueEvent(new PlayerEvent(54, "Jeter", "Idle"));
+        EventManager.Instance.QueueEvent(new PlayerEvent(53, "Jeter", "Victory"));
+        EventManager.Instance.QueueEvent(new PlayerEvent(57, "Jeter", "Idle"));
 
 
         ////Ball flying to the crowd

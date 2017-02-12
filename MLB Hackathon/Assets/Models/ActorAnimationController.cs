@@ -63,6 +63,12 @@ public class ActorAnimationController : MonoBehaviour {
             case "BallHit":
                 myAnimator.SetTrigger("BallHit");
                 break;
+            case "Pitch":
+                myAnimator.SetTrigger("Pitch");
+                break;
+            case "Sad":
+                myAnimator.SetTrigger("Sad");
+                break;
             default:
                 Debug.Log(a + "anim doesnt exist");
                 break;
